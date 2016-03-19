@@ -3,9 +3,9 @@ var faker = require('faker');
 exports.handler = function (event,context) {
     
     var inventory = [];
-    for (var i=;i<10;i++) {
+    for (var=i;i<10;i++) {
         var shoe = {};
-        var shoeType = getShoeType{};
+        var shoeType = getShoeType();
         shoe.name = getShoeName(shoeType);
         shoe.color = getShoeColor();
         shoe.description = getShoeDescription(shoeType);
@@ -41,24 +41,24 @@ function getShoeSize() {
 }
 
 
-function getshoePrice() {
+function getShoePrice() {
     return faker.commerce.price();
 }
+
 function getshoeType() {
-    
-    var shoeType = {
+    var shoeType = [
         "running shoe",
         "cross-training shoe",
         "tennis shoe",
         "basketball shoe",
         "aerobic shoe",
         "spinning shoe"
-    }
-    retun shoeType[getNum(0,5)];
+    ]
+    return shoeType[getNum(0,5)];
     
 }
 
 
 function getNum (min,max) {
-    return Math.floor(math.random()*(max-min+1)) + min;
+    return Math.floor(Math.random()*(max-min+1)) + min;
 }
